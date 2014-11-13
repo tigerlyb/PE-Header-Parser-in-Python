@@ -86,45 +86,43 @@ if __name__ == '__main__':
     malware = 0
     
     start = time.time()
-    fileList = dir_list2('/Users/tigerlyb/Documents/CSCI8260Project/malware/')
+    fileList = dir_list2('YourDirectory/malware/')
     for f in fileList:
-        if f != '/Users/tigerlyb/Documents/CSCI8260Project/malware/.DS_Store':
-            pe = pefile.PE(f, fast_load=True)
-            numberOfFiles = numberOfFiles + 1
-            print "Number Of Files: ", numberOfFiles
-            
-            if pe.OPTIONAL_HEADER.SizeOfInitializedData == 0:
-                malware = malware + 1
-            elif sectionName (f) == 1:
-                malware = malware + 1
+        pe = pefile.PE(f, fast_load=True)
+        numberOfFiles = numberOfFiles + 1
+        print "Number Of Files: ", numberOfFiles
+        
+        if pe.OPTIONAL_HEADER.SizeOfInitializedData == 0:
+            malware = malware + 1
+        elif sectionName (f) == 1:
+            malware = malware + 1
             
     end = time.time()
     elapsed = end - start
     print "Malware Find", malware
     print "The time for running this program: ", elapsed
-    '''
-    start = time.time()
-    fileList = dir_list2('/Users/tigerlyb/Documents/CSCI8260Project/normal/')
-    for f in fileList:
-        if f != '/Users/tigerlyb/Documents/CSCI8260Project/normal/.DS_Store':
-            pe = pefile.PE(f, fast_load=True)
-            numberOfFiles = numberOfFiles + 1
-            print "Number Of Files: ", numberOfFiles
 
-            if pe.OPTIONAL_HEADER.SizeOfInitializedData == 0:
-                sizeOfInitializedData = sizeOfInitializedData + 1
+    start = time.time()
+    fileList = dir_list2('YourDirectory/normal/')
+    for f in fileList:
+        pe = pefile.PE(f, fast_load=True)
+        numberOfFiles = numberOfFiles + 1
+        print "Number Of Files: ", numberOfFiles
+
+        if pe.OPTIONAL_HEADER.SizeOfInitializedData == 0:
+            sizeOfInitializedData = sizeOfInitializedData + 1
+        
+        if sectionName (f) == 1:
+            abnormalName = abnormalName + 1
             
-            if sectionName (f) == 1:
-                abnormalName = abnormalName + 1
-                
-            if pe.OPTIONAL_HEADER.DllCharacteristics == 0:
-                dllCharacteristics = dllCharacteristics + 1
+        if pe.OPTIONAL_HEADER.DllCharacteristics == 0:
+            dllCharacteristics = dllCharacteristics + 1
+        
+        if pe.OPTIONAL_HEADER.MajorImageVersion == 0:
+            majorImageVersion = majorImageVersion + 1
             
-            if pe.OPTIONAL_HEADER.MajorImageVersion == 0:
-                majorImageVersion = majorImageVersion + 1
-                
-            if pe.OPTIONAL_HEADER.CheckSum == 0:
-                checkSumCount = checkSumCount + 1
+        if pe.OPTIONAL_HEADER.CheckSum == 0:
+            checkSumCount = checkSumCount + 1
                  
     end = time.time()
     elapsed = end - start
@@ -134,4 +132,4 @@ if __name__ == '__main__':
     print "MajorImageVersion == 0: ", majorImageVersion
     print "CheckSum == 0: ", checkSumCount
     print "The time for running this program: ", elapsed
-    '''        
+
