@@ -7,9 +7,9 @@ Here are the following three major parts of this project:
 
 (1) collect a large dataset of malware .exe (given by the project advisor) and legitimate .exe from the two website, www.downloads.com and www.softpedia.com by writing a python script called "crawler.py" as a web spider to automatically download files from website;
 
-(2) write three python scripts called "parse.py, parseM.py, parseN.py" to extract the features of each header ﬁeld, compare and ﬁnd the most signiﬁcant differences between malware and legitimate .exe ﬁles;
+(2) write python scripts called "parseM.py, parseN.py" to extract the features of each header ﬁeld, compare and ﬁnd the most signiﬁcant differences between malware and legitimate .exe ﬁles;
 
-(3) write three python scripts called "icon.py, iconM.py, iconN.py" to extract the icons from the PE, and then ﬁnd the most prevalent icons from the malware .exe ﬁles by comparing from the legitimate .exe files.
+(3) write python scripts called "iconM.py, iconN.py" to extract the icons from the PE, and then ﬁnd the most prevalent icons from the malware .exe ﬁles by comparing from the legitimate .exe files.
 
 
 Conclusion:
