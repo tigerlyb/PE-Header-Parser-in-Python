@@ -1,16 +1,15 @@
 PE Header Based Antivirus Tool
 ==============================
 
-In this project, I present a simple and faster apporach to distinguish between malware and legitimate .exe ﬁles by simply looking at properties of the Windows Portable Executable (PE) headers. We extract distinguishing features from the PEheaders
-using the structural information standardized by the Miscrosoft Windows operating system for executables. 
+In this project, I present a simple and faster apporach to distinguish between malware and legitimate .exe ﬁles by simply looking at the properties of the Windows Portable Executable (PE) headers, and develop a tool to detect malware from a large number of .exe files. We extract distinguishing features from the PE headers using the structural information standardized by the Miscrosoft Windows operating system for executables. 
 
-I use the following three methodologies: 
+Here are the following three major parts of this project: 
 
-(1) collect a large dataset of malware .exe (given by the project advisor) and legitimate .exe from the two website, www.downloads.com and www.softpedia.com by writing a python script called "WebSpider";
+(1) collect a large dataset of malware .exe (given by the project advisor) and legitimate .exe from the two website, www.downloads.com and www.softpedia.com by writing a python script called "crawler.py" as a web spider to automatically download files from website;
 
-(2) write a python script called "PE Header Parser" to extract the features of each header ﬁeld, compare and ﬁnd the most signiﬁcant differences between malware and legitimate .exe ﬁles;
+(2) write three python scripts called "parse.py, parseM.py, parseN.py" to extract the features of each header ﬁeld, compare and ﬁnd the most signiﬁcant differences between malware and legitimate .exe ﬁles;
 
-(3) write a python script called "Icon Extractor" to extract the icons from the PE, and then ﬁnd the most prevalent icons from the malware .exe ﬁles.
+(3) write three python scripts called "icon.py, iconM.py, iconN.py" to extract the icons from the PE, and then ﬁnd the most prevalent icons from the malware .exe ﬁles by comparing from the legitimate .exe files.
 
 
 Conclusion:
