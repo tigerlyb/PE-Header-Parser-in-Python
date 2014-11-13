@@ -9,7 +9,7 @@ downloadLinks = 0
 
 
 for num in range(1500,2000):
-    u = "http://download.cnet.com/windows/3150-20_4-0-" + str(num) + ".html?sort=reviewDate%20asc&tag=page"
+    u = "http://download.cnet.com/windows/3150-20_4-0-" + str(num) + ".html?sort=reviewDate%20asc&tag=page" # from download.com
     page = urllib2.urlopen(u)
     soup = BeautifulSoup(page)
     
