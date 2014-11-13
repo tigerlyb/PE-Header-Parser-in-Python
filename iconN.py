@@ -9,7 +9,7 @@ class extractIcon():
         iconEmbededN = 0
         numberOfFilesN = 0
         
-        fileListN = self.dir_list('C:\\Users\\tigerlyb\\Documents\\PE\\normal\\')
+        fileListN = self.dir_list('YourDirectory\\normal\\')
         
         for f in fileListN:
             numberOfFilesN = numberOfFilesN + 1            
@@ -23,7 +23,7 @@ class extractIcon():
                 print win32gui.ExtractIconEx(f, 0)
                 win32gui.DestroyIcon(small[0])                    
                 self.pixmap = QtGui.QPixmap.fromWinHBITMAP(self.bitmapFromHIcon(large[0]), 2)
-                dest = "C:\\Users\\tigerlyb\\Documents\\PE\\iconN\\" + f[42:len(f)-4] + ".ico"
+                dest = "YourDirectory\\iconN\\" + f[42:len(f)-4] + ".ico"
                 self.pixmap.save(dest)
                 print ""
             else:
