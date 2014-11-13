@@ -9,27 +9,26 @@ class extractIcon():
         iconEmbededM = 0
         numberOfFilesM = 0
         
-        fileListM = self.dir_list('E:\\Users\\tigerlyb\\Documents\\CSCI8260Project\\malware\\')
+        fileListM = self.dir_list('YourDirectory\\malware\\')
         
         for f in fileListM:
-            if f != 'E:\\Users\\tigerlyb\\Documents\\CSCI8260Project\\malware\\.DS_Store':
-                numberOfFilesM = numberOfFilesM + 1            
-                print "File Number(Malware): ", numberOfFilesM
-                print f
-                if win32gui.ExtractIconEx(f, -1):
-                    print "Icon Embedded(Malware)."
-                    print ""
-                    iconEmbededM = iconEmbededM + 1                  
-                    large, small = win32gui.ExtractIconEx(f, 0)
-                    print win32gui.ExtractIconEx(f, 0)
+            numberOfFilesM = numberOfFilesM + 1            
+            print "File Number(Malware): ", numberOfFilesM
+            print f
+            if win32gui.ExtractIconEx(f, -1):
+                print "Icon Embedded(Malware)."
+                print ""
+                iconEmbededM = iconEmbededM + 1                  
+                large, small = win32gui.ExtractIconEx(f, 0)
+                print win32gui.ExtractIconEx(f, 0)
 
-                    win32gui.DestroyIcon(small[0])                    
-                    self.pixmap = QtGui.QPixmap.fromWinHBITMAP(self.bitmapFromHIcon(large[0]), 2)
-                    dest = "C:\\Users\\tigerlyb\\Documents\\PE\\iconM\\" + f[52:len(f)-4] + ".ico"
-                    self.pixmap.save(dest)
-                else:
-                    print "No Icon Embedded(Malware)."
-                    print ""      
+                win32gui.DestroyIcon(small[0])                    
+                self.pixmap = QtGui.QPixmap.fromWinHBITMAP(self.bitmapFromHIcon(large[0]), 2)
+                dest = "YourDirectory\\iconM\\" + f[52:len(f)-4] + ".ico"
+                self.pixmap.save(dest)
+            else:
+                print "No Icon Embedded(Malware)."
+                print ""      
                 
         print ""        
         print "Total Number Of Files Embedded Icon(Malware): ", iconEmbededM       
