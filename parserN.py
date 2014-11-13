@@ -103,7 +103,7 @@ if __name__ == '__main__':
     elapsed = end - start
     print "Malware Find", malware
     print "The time for running this program: ", elapsed
-    '''
+
     start = time.time()
     fileList = dir_list2('/Users/tigerlyb/Documents/CSCI8260Project/normal/')
     for f in fileList:
@@ -135,4 +135,4 @@ if __name__ == '__main__':
     print "MajorImageVersion == 0: ", majorImageVersion
     print "CheckSum == 0: ", checkSumCount
     print "The time for running this program: ", elapsed
-    '''        
+
