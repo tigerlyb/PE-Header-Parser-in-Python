@@ -1,7 +1,7 @@
-PE Header Parser
-================
+PE Header Parser: A PE Header-Based Antivirus Tool
+==================================================
 
-PE Header-Based Antivirus Tool
+
 
 In this project, I present a simple and faster apporach to distinguish between malware and legitimate .exe ﬁles by simply looking at the properties of the Windows Portable Executable (PE) headers, and develop a tool to detect malware from a large number of .exe files. We extract distinguishing features from the PE headers using the structural information standardized by the Miscrosoft Windows operating system for executables. 
 
